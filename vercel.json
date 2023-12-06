@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.js",  // Nombre de tu archivo principal
+      "use": "@now/node"  // Indica a Vercel que es una aplicación Node.js
+    }
+  ],
+  "routes": [
+    {
+      "src": "/socket.io",
+      "dest": "app.js"  // La ruta que coincide con tu servidor de Socket.IO
+    },
+    {
+      "src": "/(.*)",
+      "dest": "app.js"  // La ruta que manejará las demás solicitudes
+    }
+  ]
+}
